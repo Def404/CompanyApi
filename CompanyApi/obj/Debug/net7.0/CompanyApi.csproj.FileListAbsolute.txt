@@ -68,3 +68,10 @@ D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\System.CodeDom.dll
 D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\System.Text.Encodings.Web.dll
 D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\System.Text.Json.dll
 D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

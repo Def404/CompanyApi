@@ -8,7 +8,7 @@
       <jdbc-url>mongodb://localhost:27017/hardDriveShope</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="hard_drive_company@localhost" uuid="afcf4e11-a973-4dac-9a56-617326d7f0d2">
+    <data-source source="LOCAL" name="hard_drive_company@localhost" uuid="59d414f5-2f30-470f-8db7-db7d6480af84">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
