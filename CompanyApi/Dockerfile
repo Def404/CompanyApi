@@ -5,14 +5,14 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["CompanyApi/CompanyApi.csproj", "CompanyApi/"]
-RUN dotnet restore "CompanyApi/CompanyApi.csproj"
+COPY ["CompanyApi.csproj", "./"]
+RUN dotnet restore "CompanyApi.csproj"
 COPY . .
-WORKDIR "/src/CompanyApi"
+WORKDIR "/src/"
 RUN dotnet build "CompanyApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "CompanyApi.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "CompanyApi.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
