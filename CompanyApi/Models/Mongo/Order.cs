@@ -13,6 +13,10 @@ public class Order
     [BsonElement("client_id")]
     public string ClientId { get; set; } = null!;
     
+    [BsonRepresentation(BsonType.ObjectId)]
+    [BsonElement("employee_id")]
+    public string EmployeeId { get; set; } = null!;
+    
     [BsonRepresentation(BsonType.DateTime)]
     [BsonElement("date")]
     public DateTime Date { get; set; }

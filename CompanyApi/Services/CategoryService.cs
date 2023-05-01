@@ -12,7 +12,7 @@ public class CategoryService
     {
         var mongoClient = new MongoClient(companyShopDbSet.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(companyShopDbSet.Value.DatabaseName);
-        _categoryCollection = mongoDatabase.GetCollection<Category>("category");
+        _categoryCollection = mongoDatabase.GetCollection<Category>("driveType");
     }
 
     public async Task<List<Category>> GetAsync() =>

@@ -10,12 +10,15 @@ public class HardDrive
     public string? Id { get; set; }
 
     [BsonRepresentation(BsonType.ObjectId)]
-    [BsonElement("catagory_id")]
+    [BsonElement("category_id")]
     public string CategoryId { get; set; } = null!;
 
     [BsonRepresentation(BsonType.ObjectId)]
     [BsonElement("connection_type_id")]
     public string ConnectionIntTypeId { get; set; } = null!;
+    
+    [BsonElement("ps_id")]
+    public int ps_id { get; set; }
     
     [BsonElement("name")]
     public string Name { get; set; } = null!;

@@ -9,6 +9,9 @@ public class Employee
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
     
+    [BsonElement("login")]
+    public string Login { get; set; } = null!;
+    
     [BsonElement("email")]
     public string Email { get; set; } = null!;
 
