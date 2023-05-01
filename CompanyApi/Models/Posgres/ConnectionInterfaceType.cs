@@ -11,5 +11,4 @@ public partial class ConnectionInterfaceType
 
     public int TransferRate { get; set; }
 
-    public virtual ICollection<HardDrive> HardDrives { get; set; } = new List<HardDrive>();
 }

@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CompanyApi.Models.Mongo;
 
-public class Employee
+public class EmployeeM
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -15,7 +15,7 @@ public class Employee
     [BsonElement("email")]
     public string Email { get; set; } = null!;
 
-    [BsonElement("fullName")]
+    [BsonElement("full_name")]
     public string FullName { get; set; } = null!;
     
     [BsonElement("phone_number")]

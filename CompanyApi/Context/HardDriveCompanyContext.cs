@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CompanyApi.Models.Posgres;
 using Microsoft.EntityFrameworkCore;
+using DriveType = CompanyApi.Models.Posgres.DriveType;
 
 namespace CompanyApi.Context;
 
@@ -24,13 +25,13 @@ public partial class HardDriveCompanyContext : DbContext
 
     public virtual DbSet<ContractClassifier> ContractClassifiers { get; set; }
 
-    public virtual DbSet<DriveTypeP> DriveTypes { get; set; }
+    public virtual DbSet<DriveType> DriveTypes { get; set; }
 
     public virtual DbSet<Employee> Employees { get; set; }
 
     public virtual DbSet<EmployeesPosition> EmployeesPositions { get; set; }
 
-    public virtual DbSet<HardDrive> HardDrives { get; set; }
+    public virtual DbSet<HardDriveP> HardDrives { get; set; }
 
     public virtual DbSet<Organization> Organizations { get; set; }
 
@@ -139,7 +140,7 @@ public partial class HardDriveCompanyContext : DbContext
                 .HasColumnName("type_name");
         });
 
-        modelBuilder.Entity<DriveTypeP>(entity =>
+        modelBuilder.Entity<DriveType>(entity =>
         {
             entity.HasKey(e => e.DriveTypeId).HasName("drive_type_pkey");
 
@@ -170,11 +171,7 @@ public partial class HardDriveCompanyContext : DbContext
                 .HasMaxLength(12)
                 .HasColumnName("phone_number");
             entity.Property(e => e.PositionId).HasColumnName("position_id");
-
-            entity.HasOne(d => d.Position).WithMany(p => p.Employees)
-                .HasForeignKey(d => d.PositionId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("employee_position_id_fkey");
+            
         });
 
         modelBuilder.Entity<EmployeesPosition>(entity =>
@@ -189,7 +186,7 @@ public partial class HardDriveCompanyContext : DbContext
                 .HasColumnName("position_name");
         });
 
-        modelBuilder.Entity<HardDrive>(entity =>
+        modelBuilder.Entity<HardDriveP>(entity =>
         {
             entity.HasKey(e => e.SerialNumber).HasName("hard_drive_pkey");
 
@@ -202,16 +199,7 @@ public partial class HardDriveCompanyContext : DbContext
                 .HasColumnName("drive_name");
             entity.Property(e => e.DriveSize).HasColumnName("drive_size");
             entity.Property(e => e.DriveTypeId).HasColumnName("drive_type_id");
-
-            entity.HasOne(d => d.ConnectionInterface).WithMany(p => p.HardDrives)
-                .HasForeignKey(d => d.ConnectionInterfaceId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("hard_drive_connection_interface_id_fkey");
-
-            entity.HasOne(d => d.DriveTypeP).WithMany(p => p.HardDrives)
-                .HasForeignKey(d => d.DriveTypeId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("hard_drive_drive_type_id_fkey");
+            
         });
 
         modelBuilder.Entity<Organization>(entity =>
@@ -308,21 +296,13 @@ public partial class HardDriveCompanyContext : DbContext
             entity.Property(e => e.SerialNumber).HasColumnName("serial_number");
             entity.Property(e => e.StatusId).HasColumnName("status_id");
 
-            entity.HasOne(d => d.Author).WithMany(p => p.TaskAuthors)
-                .HasForeignKey(d => d.AuthorId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("task_author_id_fkey");
-
+            
             entity.HasOne(d => d.Contract).WithMany(p => p.Tasks)
                 .HasForeignKey(d => d.ContractId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("task_contract_id_fkey");
 
-            entity.HasOne(d => d.Executor).WithMany(p => p.TaskExecutors)
-                .HasForeignKey(d => d.ExecutorId)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("task_executor_id_fkey");
-
+            
             entity.HasOne(d => d.Person).WithMany(p => p.Tasks)
                 .HasForeignKey(d => d.PersonId)
                 .OnDelete(DeleteBehavior.Restrict)
@@ -337,12 +317,7 @@ public partial class HardDriveCompanyContext : DbContext
                 .HasForeignKey(d => d.ReceiptId)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName("task_receipt_id_fkey");
-
-            entity.HasOne(d => d.SerialNumberNavigation).WithMany(p => p.Tasks)
-                .HasForeignKey(d => d.SerialNumber)
-                .OnDelete(DeleteBehavior.Restrict)
-                .HasConstraintName("task_serial_number_fkey");
-
+            
             entity.HasOne(d => d.StatusP).WithMany(p => p.Tasks)
                 .HasForeignKey(d => d.StatusId)
                 .OnDelete(DeleteBehavior.Restrict)

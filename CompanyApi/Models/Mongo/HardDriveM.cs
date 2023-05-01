@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CompanyApi.Models.Mongo;
 
-public class HardDrive
+public class HardDriveM
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]

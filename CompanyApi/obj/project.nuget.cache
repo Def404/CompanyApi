@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3lN7Q4JfvuIEDad8wMyefl1q57OydVe4Qk0u2dRn7J9KY3PUqk0zmkR6kEoz6oWl8vgrwXADczvgYF+6ZFpFRg==",
+  "dgSpecHash": "S0x6qj+qbhEY4e40LGmY6xkTudhWd+D8yhC1WEijMzZM7ptTP0eNqdqK5a/V2+wxhx74htctI50W/OfpbiqHsQ==",
   "success": true,
   "projectFilePath": "D:\\Project\\CompanyApi\\CompanyApi\\CompanyApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\basc1\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\basc1\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
+    "C:\\Users\\basc1\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\basc1\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\basc1\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\basc1\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.5\\microsoft.aspnetcore.authentication.jwtbearer.7.0.5.nupkg.sha512",

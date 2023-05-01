@@ -41,7 +41,7 @@ public partial class TaskP
 
     public virtual TaskReceiptType Receipt { get; set; } = null!;
 
-    public virtual HardDrive? SerialNumberNavigation { get; set; }
+    public virtual HardDriveP? SerialNumberNavigation { get; set; }
 
     public virtual TaskStatusP StatusP { get; set; } = null!;
 }

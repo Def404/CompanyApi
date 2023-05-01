@@ -6,27 +6,27 @@ namespace CompanyApi.Services;
 
 public class EmployeeService
 {
-    private readonly IMongoCollection<Employee> _employeeCollection;
+    private readonly IMongoCollection<EmployeeM> _employeeCollection;
 
     public EmployeeService(IOptions<CompanyShopDbSettings> companyShopDbSet)
     {
         var mongoClient = new MongoClient(companyShopDbSet.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(companyShopDbSet.Value.DatabaseName);
-        _employeeCollection = mongoDatabase.GetCollection<Employee>("employee");
+        _employeeCollection = mongoDatabase.GetCollection<EmployeeM>("employee");
     }
 
-    public async Task<List<Employee>> GetAsync() =>
+    public async Task<List<EmployeeM>> GetAsync() =>
         await _employeeCollection.Find(_ => true).ToListAsync();
 
-    public async Task<Employee?> GetAsync(string id) =>
+    public async Task<EmployeeM?> GetAsync(string id) =>
         await _employeeCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
     
-    public async Task CreateAsync(Employee newEmployee) =>
-        await _employeeCollection.InsertOneAsync(newEmployee);
+    public async Task CreateAsync(EmployeeM newEmployeeM) =>
+        await _employeeCollection.InsertOneAsync(newEmployeeM);
 
-    public async Task UpdateAsync(string id, Employee updatedEmployee) =>
-        await _employeeCollection.ReplaceOneAsync(x => x.Id == id, updatedEmployee);
+    public async Task UpdateAsync(string id, EmployeeM updatedEmployeeM) =>
+        await _employeeCollection.ReplaceOneAsync(x => x.Id == id, updatedEmployeeM);
 
-    public async Task RemoveAsync(string id) =>
-        await _employeeCollection.DeleteOneAsync(x => x.Id == id);
+    public async Task RemoveAsync(string login) =>
+        await _employeeCollection.DeleteOneAsync(x => x.Login == login);
 }

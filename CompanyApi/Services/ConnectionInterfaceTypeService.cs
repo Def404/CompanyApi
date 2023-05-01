@@ -18,8 +18,8 @@ public class ConnectionInterfaceTypeService
     public async Task<List<ConnectionInterfaceType>> GetAsync() =>
         await _connectionIntTypeCollection.Find(_ => true).ToListAsync();
 
-    public async Task<ConnectionInterfaceType?> GetAsync(string id) =>
-        await _connectionIntTypeCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+    public async Task<ConnectionInterfaceType?> GetAsync(int ps_id) =>
+        await _connectionIntTypeCollection.Find(x => x.ps_id == ps_id).FirstOrDefaultAsync();
     
     public async Task CreateAsync(ConnectionInterfaceType newInterfaceType) =>
         await _connectionIntTypeCollection.InsertOneAsync(newInterfaceType);

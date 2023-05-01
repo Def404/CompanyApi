@@ -19,9 +19,5 @@ public partial class Employee
 
     public int PositionId { get; set; }
 
-    public virtual EmployeesPosition Position { get; set; } = null!;
-
-    public virtual ICollection<TaskP> TaskAuthors { get; set; } = new List<TaskP>();
-
-    public virtual ICollection<TaskP> TaskExecutors { get; set; } = new List<TaskP>();
+    public virtual EmployeesPosition? Position { get; set; } = null!;
 }

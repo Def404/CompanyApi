@@ -3,6 +3,7 @@ using System.Security.Claims;
 using CompanyApi.Context;
 using CompanyApi.Models;
 using CompanyApi.Models.Posgres;
+using CompanyApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,10 +16,12 @@ namespace CompanyApi.Controllers;
 public class LoginController : ControllerBase
 {
     private readonly HardDriveCompanyContext _context;
+    private readonly EmployeeService _employeeService;
 
-    public LoginController(HardDriveCompanyContext context)
+    public LoginController(HardDriveCompanyContext context, EmployeeService employeeService)
     {
         _context = context;
+        _employeeService = employeeService;
     }
 
     [AllowAnonymous]
@@ -37,6 +40,14 @@ public class LoginController : ControllerBase
         }
 
         if (employeeP == null)
+        {
+            return NotFound("Не верные данные");
+        }
+
+        var employeesM = await _employeeService.GetAsync();
+        var employeeM = employeesM.FirstOrDefault(e => e.Login == employeeLogin.Login);
+
+        if (employeeM == null)
         {
             return NotFound("Не верные данные");
         }
