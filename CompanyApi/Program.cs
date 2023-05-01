@@ -1,4 +1,5 @@
 using CompanyApi;
+using CompanyApi.Context;
 using CompanyApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,8 @@ builder.Services.AddSingleton<CategoryService>();
 builder.Services.AddSingleton<ConnectionInterfaceTypeService>();
 builder.Services.AddSingleton<HardDriveService>();
 builder.Services.AddSingleton<EmployeeService>();
+
+builder.Services.AddDbContext<HardDriveCompanyContext>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

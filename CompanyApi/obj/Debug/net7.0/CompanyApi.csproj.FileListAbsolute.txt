@@ -58,3 +58,13 @@ D:\Project\CompanyApi\CompanyApi\obj\Debug\net7.0\refint\CompanyApi.dll
 D:\Project\CompanyApi\CompanyApi\obj\Debug\net7.0\CompanyApi.pdb
 D:\Project\CompanyApi\CompanyApi\obj\Debug\net7.0\CompanyApi.genruntimeconfig.cache
 D:\Project\CompanyApi\CompanyApi\obj\Debug\net7.0\ref\CompanyApi.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Humanizer.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\dotnet-ef.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Mono.TextTemplating.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\System.CodeDom.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\System.Text.Encodings.Web.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\System.Text.Json.dll
+D:\Project\CompanyApi\CompanyApi\bin\Debug\net7.0\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
